@@ -5,3 +5,11 @@ body {
 pre {
 	color: darkred
 }
+
+a {
+	color: darkred
+}
+
+.tab {
+	margin-left: 40px;
+}
