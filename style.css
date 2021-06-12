@@ -2,14 +2,11 @@ body {
 	background-color: #f2f0e6;
 }
 
-pre {
-	color: darkred
-}
-
 a {
 	color: darkred
 }
 
 .tab {
 	margin-left: 40px;
+	margin-right: 40px;
 }

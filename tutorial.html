@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<title>Tutorial</title>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+<b style="color: darkred">ᛗ</b>
+<br>
+<br>
+	
+	<u>Tutorial (Incomplete)</u>
+	<hr>
+
+	<p class="tab">
+	Once installed, Merlin can be invoked in your shell of choice by simply typing <code>merlin</code> and hitting return.
+	<br>
+	
+	You should then be greeted by a comma and blinking cursor. Something like:
+	
+	<br><br>
+
+	<code>
+	$ merlin
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	First, we can start out by typing some text and hitting enter.
+
+	<br><br>
+
+	<code>
+	, hello, merlin!
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	Now, what exactly did this do? Well, Merlin will automatically start in its <code>atom</code> mode, so in this case typing <code>hello, merlin!</code> will first add <code>hello,</code> and then <code>merlin!</code> to the <i>stack</i>. The <i>stack</i>, in Merlin, is a global list of data, or pieces of text, called <i>atoms</i>. To view the stack, we can use the <code>molecule</code> command like so:
+
+	<br><br>
+
+	<code>
+	, ;molecule
+	<br>
+	hello, merlin!
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	Take note that commands in Merlin are prefixed with a semicolon, to distinguish them from atoms. If you would like to add an atom beginning with a semicolon to the stack, you can prefix it with a backslash (\).
+	
+	<br><br>
+
+	Now, what if we would like to switch the order of these two atoms? We can use the <code>orbit</code> command.
+
+	<br><br>
+
+	<code>
+	, ;orbit ;molecule
+	<br>
+	merlin! hello,
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	There we go! Now the order of the two atoms have been reversed. Again, take note that just like you can add two atoms to the stack on the same line, you can also run two commands.
+
+	<br><br>
+
+	Of course if you can add atoms, you must also be able to remove them. You can do so with the <code>decay</code> command.
+
+	<br><br>
+
+	<code>
+	, ;decay ;molecule
+	<br>
+	merlin!
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	You can also clear the entire stack using <code>destroy</code>:
+
+	<br><br>
+
+	<code>
+	, ;destroy ;molecule
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	Often you will need to view the last atom on the stack, that can be done with <code>pen</code>.
+
+	<br><br>
+
+	<code>
+	, hello world
+	<br>
+	, ;pen
+	world, |
+	<br>
+	</code>
+
+	<br><br>
+
+	Well would you look at that, <code>pen</code> doesn't append a newline! If you would like to use a newline anywhere in Merlin, you can use <code>new</code>. Although it is formatted like a command, all it really does is add a newline to the stack. Think of it being like <code>\n</code> in C derived programming languages.
+
+	<br><br>
+
+	So, if we wanted to print the last atom on the stack, followed by a newline we could do something like:
+
+	<br><br>
+
+	<code>
+	, ;pen ;new ;pen ;decay
+	<br>
+	world
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	The <code>decay</code> is nessicary for removing the newline we added to the stack.
+
+	<br><br>
+
+	Another action that you will find is very commonly needed in Merlin is joining and splitting atoms on the stack. You can use the <code>tether</code> command to join all of the atoms by another atom.
+
+	<br><br>
+
+	<code>
+	, ;new ;tether
+	<br>
+	, ;pen ;new ;pen ;decay
+	<br>
+	hello
+	<br>
+	world
+	<br>
+	, |
+	</code>
+
+	<br><br>
+
+	Essentially, <code>tether</code> will take the last atom, intersplicing it between all of the previous atoms, creating a <i>new</i> atom.
+
+	<br><br>
+
+	<code>fray</code> works in a similar way. It takes the second to last atom and splits it into different atoms, using the last atom as the delimiter.
+	
+	<br><br>
+
+	<code>
+	, ;new ;fray
+	<br>
+	, ;molecule
+	<br>
+	hello world
+	<br>
+	, |
+	</code>
+	</p>
+</body>
+</html>
