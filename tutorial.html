@@ -20,14 +20,14 @@ Tutorial (Incomplete)
 	<pre><code>
 	$ merlin
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>First, we can start out by typing some text and hitting enter.</p>
 
 	<pre><code>
 	, hello, merlin!
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>Now, what exactly did this do? Well, Merlin will automatically start in its <code>atom</code> mode, so in this case typing <code>hello, merlin!</code> will first add <code>hello,</code> and then <code>merlin!</code> to the <i>stack</i>. The <i>stack</i>, in Merlin, is a global list of data, or pieces of text, called <i>atoms</i>. To view the stack, we can use the <code>molecule</code> command like so:</p>
 
@@ -35,7 +35,7 @@ Tutorial (Incomplete)
 	, ;molecule
 	hello, merlin!
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>Take note that commands in Merlin are prefixed with a semicolon, to distinguish them from atoms. If you would like to add an atom beginning with a semicolon to the stack, you can prefix it with a backslash (\).</p>
 	
@@ -45,7 +45,7 @@ Tutorial (Incomplete)
 	, ;orbit ;molecule
 	merlin! hello,
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>There we go! Now the order of the two atoms have been reversed. Again, take note that just like you can add two atoms to the stack on the same line, you can also run two commands.</p>
 
@@ -55,14 +55,14 @@ Tutorial (Incomplete)
 	, ;decay ;molecule
 	merlin!
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>You can also clear the entire stack using <code>destroy</code>:</p>
 
 	<pre><code>
 	, ;destroy ;molecule
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>Often you will need to view the last atom on the stack, that can be done with <code>pen</code>.</p>
 
@@ -70,7 +70,7 @@ Tutorial (Incomplete)
 	, hello world
 	, ;pen
 	world, |
-	</pre></code>
+	</code></pre>
 
 	<p>Well would you look at that, <code>pen</code> doesn't append a newline! If you would like to use a newline anywhere in Merlin, you can use <code>new</code>. Although it is formatted like a command, all it really does is add a newline to the stack. Think of it being like <code>\n</code> in C derived programming languages.</p>
 
@@ -80,7 +80,7 @@ Tutorial (Incomplete)
 	, ;pen ;new ;pen ;decay
 	world
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>The <code>decay</code> is necessary for removing the newline we added to the stack.</p>
 
@@ -92,7 +92,7 @@ Tutorial (Incomplete)
 	hello
 	world
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>Essentially, <code>tether</code> will take the last atom, intersplicing it between all of the previous atoms, creating a <i>new</i> atom.</p>
 
@@ -103,7 +103,7 @@ Tutorial (Incomplete)
 	, ;molecule
 	hello world
 	, |
-	</pre></code>
+	</code></pre>
 
 	<p>Now you have learned all of the ways you can manipulate the stack in Merlin! But still, many of these actions can be clunky to type out each time, that's where the <code>nomen</code> command comes in.</p>
 	
