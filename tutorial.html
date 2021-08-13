@@ -107,7 +107,27 @@ Tutorial (Incomplete)
 
 	<p>Now you have learned all of the ways you can manipulate the stack in Merlin! But still, many of these actions can be clunky to type out each time, that's where the <code>nomen</code> command comes in.</p>
 	
-	<p>The <code>nomen</code> command captures all of the atoms in the stack, creating a new command, named by whatever the last atom of the stack was.</p>
+	<p>The <code>nomen</code> command captures all of the atoms in the stack, creating a new command, named by whatever the last atom of the stack was. Calling the "nomen" will "expand" to whatever the stack was when you defined it.</p>
+
+	<p>If you wanted to create a nomen, <code>dispn</code>, to print the most recent item, appending a newline, and then removing the item from the stack, you would do:</p>
+
+	<pre><code>
+	, \;pen \;decay disp ;nomen
+	, \;disp ;new \;disp dispn ;nomen
+	, |
+	</code></pre>
+
+	<p>The first line defines the <code>disp</code> nomen to print the last item in a stack and then remove it. Notice that the commands are prefixed with a '\' in order to escape the commands' leading semicolons.</p>
+
+	<p>The second line defines <code>dispn</code>. It calls our <code>disp</code> nomen by itself (therefore on the last item on the stack), and then on a newline</p>
+
+	<p>This means that calling <code>Hello! ;dispn</code> would "expand" to:</p>
+
+	<code>Hello! ;disp ;new ;disp</code>
+
+	<p>And then:</p>
+
+	<code>Hello! ;pen ;decay ;new ;pen ;decay</code>
 	</div>
 </body>
 </html>

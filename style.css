@@ -1,9 +1,11 @@
+:root { --red: #893F45; }
+
 body {
-	background-color: #f2f0e6;
+	background-color: #ffffea;
 }
 
 a {
-	color: darkred
+	color: var(--red);
 }
 
 .tab {
@@ -12,5 +14,5 @@ a {
 }
 
 .dr {
-	color: darkred;
+	color: var(--red);
 }
