@@ -13,6 +13,16 @@ Tutorial (Incomplete)
 <hr>
 
 	<div class="tab">
+	<ol>
+		<li><a href="#starting_merlin">Starting Merlin</a></li>
+		<li><a href="#stack_manipulation">Stack Manipulation</a></li>
+		<li><a href="#nomens">Nomens</a></li>
+		<li><a href="#modes">Modes</a></li>
+	</ol>
+
+
+	<h3 id="starting">Starting Merlin</h3>
+
 	<p>Once installed, Merlin can be invoked in your shell of choice by simply typing <code>merlin</code> and hitting return.</p>
 	
 	<p>You should then be greeted by a comma and blinking cursor. Something like:</p>
@@ -21,6 +31,8 @@ Tutorial (Incomplete)
 	$ merlin
 	, |
 	</code></pre>
+
+	<h3 id="stack_manipulation">Stack Manipulation</h3>
 
 	<p>First, we can start out by typing some text and hitting enter.</p>
 
@@ -105,6 +117,8 @@ Tutorial (Incomplete)
 	, |
 	</code></pre>
 
+	<h3 id="nomens">Nomens</h3>
+
 	<p>Now you have learned all of the ways you can manipulate the stack in Merlin! But still, many of these actions can be clunky to type out each time, that's where the <code>nomen</code> command comes in.</p>
 	
 	<p>The <code>nomen</code> command captures all of the atoms in the stack, creating a new command, named by whatever the last atom of the stack was. Calling the "nomen" will "expand" to whatever the stack was when you defined it.</p>
@@ -123,11 +137,36 @@ Tutorial (Incomplete)
 
 	<p>This means that calling <code>Hello! ;dispn</code> would "expand" to:</p>
 
-	<code>Hello! ;disp ;new ;disp</code>
+	<pre><code>
+	Hello! ;disp ;new ;disp
+	</code></pre>
 
 	<p>And then:</p>
 
-	<code>Hello! ;pen ;decay ;new ;pen ;decay</code>
+	<pre><code>
+	Hello! ;pen ;decay ;new ;pen ;decay
+	</code></pre>
+
+	<h3 id="modes">Modes</h3>
+
+	<p>Now that you know everything there is to know about stack manipulation and nomens in merlin, you can begin to learn about merlin's different modes</p>
+
+	<p>
+	As mentioned before, merlin defaults to being in the <code>atom</code> mode. In this mode each space-separated "atom" is parsed by itself, whether it be a string or a command.
+	This differs from merlin's <code>scribe</code> mode (entered by simply using the <code>scribe</code> command) in which each line is parsed in it's whole.
+	This means that entering <code>hello, world</code> will add the string in its entirety to the stack, not breaking it up into pieces like <code>atom</code> would.
+	</p>
+
+	<p>This concept is exemplified by the following example:</p>
+
+	<pre><code>
+	, ;scribe
+	Hello, World!
+	;dispn
+	Hello, World
+	;atom
+	, |
+	</code></pre>
 	</div>
 </body>
 </html>
