@@ -117,9 +117,11 @@ Tutorial (Incomplete)
 	, |
 	</code></pre>
 
+	<p>Finally, you can use the <code>atoms</code> command to get the number of atoms in the stack. This is useful for when you are dealing with empty ("") atoms.</p>
+
 	<h3 id="nomens">Nomens</h3>
 
-	<p>Now you have learned all of the ways you can manipulate the stack in Merlin! But still, many of these actions can be clunky to type out each time, that's where the <code>nomen</code> command comes in.</p>
+	<p>Now you have learned all of the ways you can manipulate the stack in Merlin! But still, many of these actions can be clunky to type out each time, that's where the <code>nomen</code> (short for nomenclature) command comes in.</p>
 	
 	<p>The <code>nomen</code> command captures all of the atoms in the stack, creating a new command, named by whatever the last atom of the stack was. Calling the "nomen" will "expand" to whatever the stack was when you defined it.</p>
 
@@ -145,6 +147,25 @@ Tutorial (Incomplete)
 
 	<pre><code>
 	Hello! ;pen ;decay ;new ;pen ;decay
+	</code></pre>
+
+	<p>Not only can you create nomens, but also delete and "clear" them. The <code>disenchant</code> command will take the name of a nomen and set it to do nothing. The nomen must be already be in memory. The <code>smash</code> will completely delete the nomen.</p>
+
+	<p>The difference between the two commands is illustrated below:</p>
+
+	<pre><code>
+	, Hello! quark ;nomen
+	, ;quark
+	, ;molecule
+	Hello!
+	, quark ;disenchant
+	, ;quark
+	, ;molecule
+	Hello!
+	, quark ;smash
+	, ;quark
+	merlin: unknown command
+	, |
 	</code></pre>
 
 	<h3 id="modes">Modes</h3>
