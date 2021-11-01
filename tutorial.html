@@ -15,6 +15,7 @@
 		<li><a href="#stack_manipulation">Stack Manipulation</a></li>
 		<li><a href="#nomens">Nomens</a></li>
 		<li><a href="#modes">Modes</a></li>
+		<li><a href="#volumes">Volumes</a></li>
 	</ol>
 
 
@@ -185,6 +186,30 @@
 	;atom
 	, |
 	</code></pre>
+
+	<p>Notice that typing <code>;atom</code> executes the <code>atom</code> command and returns us to the atom mode</p>
+
+	<p>It would also be a good time to mention that the <code>adieu</code> command can be used to exit merlin at any time.</p>
+
+	<h3 id="volumes">Volumes</h3>
+
+	<p>Merlin, like most text editors, support multiple buffers (called volumes) for storing the text you are manipulating. You can create a new buffer with the <code>genesis</code> command:</p>
+
+	<pre><code>
+	, ;genesis
+	, ;volume ;dispn ;volumes ;dispn
+	1
+	1
+	, |
+	</code></pre>
+
+	<p>We can use the <code>volume</code> command to return the index of our current buffer, and <code>volumes</code> to return the total number of buffers open.</p>
+
+	<p>Volumes are indexed in the order in which they are created, you can go to volume <i>n</i> by typing <code><i>n</i> ;focus</code>.</p>
+
+	<p>Similarly, you can use the <code>shelve</code> command to close volumes.</p>
+
+	<p>Finally, you can do <code>filename ;dub</code> to name your buffer, and then <code>;carve</code> to write it.</p>
 	</div>
 </body>
 </html>
