@@ -16,3 +16,8 @@ a {
 .dr {
 	color: var(--red);
 }
+
+dt {
+	font-family: monospace;
+	margin: 10px 0;
+}
