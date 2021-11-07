@@ -16,60 +16,112 @@
 		
 		<dl>
 			<dt>[s] ;genesis</dt>
+				<dd>Create a new volume, filled optionally with [s]</dd>
 			<dt>[i] ;spine [s]</dt>
+				<dd>Return the name of the volume at index [i]</dd>
 			<dt>;carved [s]</dt>
+				<dd>Return "@" if the current volume is written, "!" otherwise</dd>
 			<dt>[i] ;shelve</dt>
+				<dd>Close volume [i]</dd>
 			<dt>[i] ;focus</dt>
+				<dd>Focus volume [i]</dd>
 			<dt>;volume [i]</dt>
+				<dd>Return the index of the current volume</dd>
 			<dt>;volumes [i]</dt>
+				<dd>Return the number of open volumes (this is also the index of the last volume)</dd>
 			<dt>[c] ;incant [s]</dt>
-			<dt>[c] ;dencant [s]</dt>
+				<dd>Run a system command, returning the text written to stdout</dd>
+			<dt>[c] ;decant [s]</dt>
+				<dd>Similar to incant, but for stderr</dd>
 			<dt>[s] [c] ;infuse [s]</dt>
+				<dd>Pipe [s] into command [c], returning stdout</dd>
 			<dt>[s] [c] ;defuse [s]</dt>
+				<dd>infuse for stderr</dd>
 			<dt>;spot [i]</dt>
+				<dd>Return the current line number</dd>
 			<dt>;span [i]</dt>
+				<dd>Return the total number of lines in the volume</dd>
 			<dt>;pin [i]</dt>
+				<dd>Return the location of the cursor</dd>
 			<dt>;columns [i]</dt>
+				<dd>Return the length of the current line</dd>
 			<dt>[n] ;traverse</dt>
+				<dd>Move the cursor vertically in relation to the current line. If [n] is positive, move down. If negative, go up</dd>
 			<dt>[n] ;shift</dt>
+				<dd>Like traverse, but for moving the cursor horizontally on the current line.</dd>
 			<dt>[i] ;appear</dt>
+				<dd>Move to line [i]</dd>
 			<dt>[i] ;infix</dt>
+				<dd>Move to character [i]</dd>
 			<dt>[i] [i] ;peer [s]</dt>
+				<dd>Return all of the lines in the range described by the given indexes</dd>
 			<dt>[s] ;inscribe</dt>
+				<dd>Insert [s] into the current volume</dd>
 			<dt>[s] ;trample</dt>
+				<dd>Like inscribe, but it overwrites text</dd>
 			<dt>;burn</dt>
+				<dd>Empty the entire volume</dd>
 			<dt>[n] ;shave</dt>
+				<dd>Delete [n] characters left of the current cursor position</dd>
 			<dt>;molecule</dt>
+				<dd>Print the contents of the stack to the screen, separated by spaces</dd>
 			<dt>;atoms [n]</dt>
+				<dd>Return the length of the stack. Hhow many atoms are present)</dd>
 			<dt>;pen</dt>
+				<dd>Print the last atom on the stack (This does not consume the atom)</dd>
 			<dt>;orbit</dt>
+				<dd>Perform a swap with the last two atoms</dd>
 			<dt>[a] ;decay</dt>
+				<dd>Pop off the bottom atom</dd>
 			<dt>...[a] ;destroy</dt>
+				<dd>Clear the stack</dd>
 			<dt>...[a] [s] ;tether</dt>
+				<dd>Join atoms together by [s], consumes entire stack</dd>
 			<dt>[s] [s] ;fray</dt>
+				<dd>Split [s] by [s]</dd>
 			<dt>;atom</dt>
+				<dd>Switch to atom mode</dd>
 			<dt>;scribe</dt>
+				<dd>Switch to scribe mode</dd>
 			<dt>;adieu</dt>
+				<dd>Quit Merlin</dd>
 			<dt>...[a] [;] ;nomen</dt>
+				<dd>Create a new "nomen" (macro)</dd>
 			<dt>[a] [;] ;bottle</dt>
+				<dd>Create a "nomen", only taking one atom</dd>
 			<dt>[;] ;disenchant</dt>
+				<dd>"Clear" a nomen, the nomen will still remain in memory but will do nothing</dd>
 			<dt>[;] ;smash</dt>
+				<dd>Completely remove a nomen from memory</dd>
 			<dt>[s] ;merlin</dt>
+				<dd>Execute an atom as inline Merlin Notation</dd>
 			<dt>[f] ;summon</dt>
+				<dd>Open file [f] for editing</dd>
 			<dt>[f] ;dub</dt>
+				<dd>Name an unnamed volume [f]</dd>
 			<dt>;carve</dt>
+				<dd>Write a volume to a file</dd>
 			<dt>[f] ;spellbook</dt>
+				<dd>Open and parse [f] as Merlin Notation</dd>
 
 			<p class="bold">Predefined Nomens:</p>
 
 			<dt>;space [s]</dt>
+				<dd>Returns a space</dd>
 			<dt>;tab [s]</dt>
+				<dd>Returns a tab</dd>
 			<dt>;new [s]</dt>
+				<dd>Returns a newline character (\n)</dd>
 			<dt>;blank [s]</dt>
+				<dd>Returns an empty atom</dd>
 			<dt>;scribe-nomen</dt>
+				<dd>Runs after each line is parsed in scribe mode, by default is does nothing</dd>
 			<dt>;atom-nomen</dt>
+				<dd>Exactly the same as scribe-nomen, but for atom mode</dd>
 			<dt>;scribe-pompt</dt>
+				<dd>This nomen is parsed BEFORE each line in scribe mode is parsed. It is intended to be used as a prompt, but you can do with it as you wish</dd>
 			<dt>;atom-prompt</dt>
+				<dd>The same as scribe-prompt, but it has a default setting. By default it prints a comma followed by a space</dd>
 		</dl>
 	</div>
 </body>
